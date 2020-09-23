@@ -1,0 +1,9 @@
+Subclassing Demonstration
+by Steve Weller
+7/5/2000
+
+Warning:  subclassing, although useful, can be potentially dangerous.  I take no responsibility for anything that may happen.  You must stop the subclassing by calling UnSubclass for each object created before destroying the Form or VB will crash.
+
+I have provided a Destroy procedure in the main subclassing module to destroy all references if you are forced to End (usually by resetting the project).  Type Destroy into the Immediate window before ending (you'll have to click No to the message box asking to reset the project and retype what you have to type).
+
+The reason it crashes is because the WindowProc procedure does not exist but Windows doesn't know it until the window is unsubclassed, so Windows keeps sending messages to the window.
